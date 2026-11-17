@@ -1,11 +1,12 @@
 
-import type { ReactNode } from "react";
 import { ThemeProvider } from "./ThemeProvider";
+import { RouterProvider } from "react-router";
+import { router } from "@/app/router";
 
-interface Props {
-  children: ReactNode;
-}
-
-export function AppProviders({ children }: Props) {
-  return <ThemeProvider>{children}</ThemeProvider>;
+export function AppProviders() {
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
